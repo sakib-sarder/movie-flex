@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ movie }) => {
-  console.log(movie.show);
-  const { image, name } = movie.show;
+  const { image, name, genres, runtime, id } = movie.show;
   return (
     <div className="card mb-3">
       <div className="row g-0">
@@ -14,16 +15,15 @@ const Card = ({ movie }) => {
         <div className="col-md-8">
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
+            <p className="card-text">Genres: {genres.join(", ")}</p>
             <p className="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+              Run-time: {runtime ? runtime : "Not Available"}
             </p>
-            <p className="card-text">
-              <small className="text-body-secondary">
-                Last updated 3 mins ago
-              </small>
-            </p>
+          </div>
+          <div className="text-end pe-1 pb-2">
+            <Link to={`/movie/${id}`}>
+              <button className="btn btn-success">View Details</button>
+            </Link>
           </div>
         </div>
       </div>

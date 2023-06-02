@@ -14,9 +14,17 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <ul className="d-flex flex-column flex-lg-row gap-4 text-style-none list-unstyled">
-              <li>Home</li>
-              <li>Movies</li>
-              <li>Register</li>
+              <li>
+                <Link className="text-decoration-none text-black">Home</Link>
+              </li>
+              <li>
+                <Link className="text-decoration-none text-black">Movies</Link>
+              </li>
+              <li>
+                <Link className="text-decoration-none text-black">
+                  Register
+                </Link>
+              </li>
             </ul>
           </Nav>
         </Navbar.Collapse>
